@@ -33,7 +33,7 @@ jobs:
           context: .
           target: build
           load: true
-      - name: Set full tag name
+      - name: Set output
         run: echo "::set-output name=full_tag_name::${GITHUB_REF#refs/tags/}"
       -
         name: Build and push
@@ -42,4 +42,4 @@ jobs:
           context: .
           push: true
           target: final
-          tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:${{ steps.Set-Full-Tag-Name.outputs.full_tag_name }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:${{ github.sha }}
