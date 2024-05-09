@@ -5,7 +5,7 @@ on:
     branches:
       - "**"
     tag:
-      - "v*.*.*"
+      - "**"
   pull_request:
     branches:
       - "main"           
