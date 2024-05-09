@@ -3,7 +3,12 @@ name: ci
 on:
   push:
     branches:
-      - add-db
+      - "**"
+    tag:
+      - "v*.*.*"
+  pull_request:
+    branches:
+      - "main"           
 
 jobs:
   build:
