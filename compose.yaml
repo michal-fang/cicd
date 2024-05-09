@@ -11,7 +11,7 @@ services:
     develop:
       watch:
         - action: rebuild
-          path: .
+          path: .        
   db:
     image: postgres
     restart: always
